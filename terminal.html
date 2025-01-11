@@ -1,15 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Terminal</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+    }
+
+    .terminal {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100vh;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    .output {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .input-line {
+      display: flex;
+      align-items: center;
+    }
+
+    .prompt {
+      margin-right: 5px;
+    }
+
+    #terminal-input {
+      background-color: transparent;
+      border: none;
+      color: #0f0;
+      outline: none;
+      flex-grow: 1;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    /* Scrollbar styling for the terminal */
+    .terminal::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .terminal::-webkit-scrollbar-thumb {
+      background: #0f0;
+    }
+
+    .terminal::-webkit-scrollbar-thumb:hover {
+      background: #0c0;
+    }
+
+    .terminal::-webkit-scrollbar-track {
+      background: #000;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
-    <noscript>In development</noscript>
-    <script>
-        alert("Sorry! In development...")
-        window.location.href = "https://notmithun.github.io/"
-    </script>
+  <div class="terminal">
+    <div id="terminal-output" class="output"></div>
+    <div class="input-line">
+      <span class="prompt">$</span>
+      <input type="text" id="terminal-input" autofocus>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      const terminalOutput = $("#terminal-output");
+      const terminalInput = $("#terminal-input");
+
+      function appendOutput(text) {
+        terminalOutput.append(`<div>${text}</div>`);
+        $(".terminal").scrollTop($(".terminal")[0].scrollHeight);
+      }
+
+      function handleCommand(command) {
+        if (command.trim() === "help") {
+          appendOutput("Available commands:\n- help: Show this help message\n- clear: Clear the terminal\n- hello: Display a greeting message");
+        } else if (command.trim() === "clear") {
+          terminalOutput.html("");
+        } else if (command.trim() === "hello") {
+          appendOutput("Hello! Welcome to the terminal.");
+        } else if (command.trim() === "exit") {
+          appendOutput("Bye!")
+          window.location.href = "https://notmithun.github.io"
+        }
+        else {
+          appendOutput(`Unknown command: ${command}`);
+        }
+      }
+
+      terminalInput.keyup(function (e) {
+        if (e.key === "Enter") {
+          const command = terminalInput.val();
+          appendOutput(`$ ${command}`);
+          handleCommand(command);
+          terminalInput.val(""); // Clear input
+        }
+      });
+    });
+  </script>
 </body>
 </html>
