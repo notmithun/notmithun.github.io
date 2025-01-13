@@ -87,10 +87,14 @@
 
       function handleCommand(command) {
         if (command.trim() === "help") {
-          appendOutput("Available commands:\n- help: Show this help message\n- clear || cls: Clear the terminal\n- hello: Display a greeting message\naboutme: Some words about mithun\nexit: Exits the terminal");
-        } else if (command.trim() === "clear" || command.trm() === "cls") {
+          appendOutput("Available commands:\n- help: Show this help message\n- clear || cls: Clear the terminal\n- hello: Display a greeting message\n-aboutme: Some words about mithun\n-exit: Exits the terminal");
+        } else if (command.trim() === "clear") {
           terminalOutput.html("");
-        } else if (command.trim() === "hello") {
+       } else if (command.trim() === "cls") {
+         terminalOutput.html("")
+         
+       }
+       else if (command.trim() === "hello") {
           appendOutput("Hello! Welcome to the terminal.");
         } else if (command.trim() === "exit") {
           appendOutput("Bye!")
@@ -98,7 +102,7 @@
         } else if (command.trim() === "aboutme") {
           appendOutput(`I'm a 12 year old and my name is Mithun. I stared coding since I was 11. My favourite coding languages are Python, HTML, CSS, JS, Java`)
         } else if (command.trim() === "build") {
-          appendOutput("BUILD 1.0.8")
+          appendOutput("BUILD 1.0.9")
         }
         else {
           appendOutput(`Unknown command: ${command}`);
