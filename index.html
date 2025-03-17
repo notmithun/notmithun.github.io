@@ -12,53 +12,116 @@
   integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
   crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/cards.css">
   <script src="https://kit.fontawesome.com/19617b418c.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <title>Welcome!</title>
   <noscript style="color: red; text-align: center; font-size: 2rem;">PLS ENABLE JAVASCRIPT...</noscript>
 </head>
 <body data-bs-theme="dark">
-<i id="themesel" class="bi bi-moon-fill float-end" onclick="changeTheme()"></i>
-<div class="d-flex justify-content-center align-items-center vh-100">
-  <div class="p-5 rounded shadow bg-body-tertiary">
-    <h2 class="text-center">Mithun Kumar</h2>
-    <p>I live in: India<br>
-       Gender: Male<br>
-       Age: 12<br>
-       Timezone: IST (+5:30 UTC)
-    </p>
-    <p class="text-center">I love to code.</p>
-    <p>My favourite languages are:</p>
-    <ul>
-      <li>Python <i class="fa-brands fa-python"></i></li>
-      <li>HTML <i class="fa-brands fa-html5"></i>, CSS <i class="fa-brands fa-css3-alt"></i></li>
-      <li>Java <i class="fa-brands fa-java"></i></li>
-      <li>C# (<em>I couldn't find an icon for C# 😔</em>)</li>
-    </ul>
-    <p>I love Windows <i class="fa-brands fa-windows"></i></p>
-    <i class="fa-brands fa-github d-flex justify-content-center align-items-center" onclick="window.location.href='https://github.com/notmithun'" style="cursor: pointer;"></i>
+  <div id="particles-js" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+  <div style="position: relative; z-index: 1;">
+    <i id="themesel" class="bi bi-moon-fill float-end" onclick="changeTheme()"></i>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+      <div class="p-5 rounded shadow bg-body-tertiary">
+        <h2 class="text-center">Mithun Kumar</h2>
+        <p>I live in: India<br>
+          Gender: Male<br>
+          Age: 12<br>
+          Timezone: IST (+5:30 UTC)
+        </p>
+        <p class="text-center">I love to code.</p>
+        <p>My favourite languages are:</p>
+        <ul>
+          <li>Python <i class="fa-brands fa-python"></i></li>
+          <li>HTML <i class="fa-brands fa-html5"></i>, CSS <i class="fa-brands fa-css3-alt"></i></li>
+          <li>Java <i class="fa-brands fa-java"></i></li>
+          <li>C# (<em>I couldn't find an icon for C# 😔</em>)</li>
+        </ul>
+        <p>I love Windows <i class="fa-brands fa-windows"></i></p>
+        <div class="d-flex flex-row justify-content-center align-items-center" style="cursor: pointer;">
+          <i class="fa-brands fa-github" onclick="window.location.href='https://github.com/notmithun'" style="margin-right: 7.5px;"></i>
+          <i onclick="window.location.href='https://app.daily.dev/notmithun'"><img id="ddimg" src="./assets/daily_dev_icon.png" style="width: 25px; height: 25px; margin-right: 7.5px;" /></i>
+          <i class="fa-brands fa-reddit" onclick="window.location.href='https://www.reddit.com/user/MithunCode2012'" style="margin-right: 7.5px;"></i>
+          <i class="fa-brands fa-stack-overflow" onclick="window.location.href='https://stackoverflow.com/users/22992157/mithun'"></i>
+        </div>
+      </div>
+    </div>
+    <button onclick="window.location.href='terminal.html'" class="btn btn-secondary"><i class="fa-solid fa-terminal"></i> Terminal</button>
   </div>
-</div>
-<button onclick="window.location.href='terminal.html'" class="btn btn-secondary"><i class="fa-solid fa-terminal"></i> Terminal</button>
-<script>
-  console.log("Build 1.1.1");
-  let mode = "dark";
+  
+  <script>
+    console.log("Build 1.1.2");
+    let mode = "dark";
 
-  function changeTheme() {
-    if (mode == "dark") {
-      mode = "light";
-      document.querySelector("body").setAttribute("data-bs-theme", "light")
-      document.getElementById("themesel").className = "bi bi-brightness-high-fill float-end"
-    } else {
-      mode = "dark";
-      document.querySelector("body").setAttribute("data-bs-theme", "dark")
-      document.getElementById("themesel").className = "bi bi-moon-fill float-end"
+    function changeTheme() {
+      if (mode == "dark") {
+        mode = "light";
+        document.querySelector("body").setAttribute("data-bs-theme", "light")
+        document.getElementById("themesel").className = "bi bi-brightness-high-fill float-end"
+        document.getElementById("ddimg").src = "./assets/daily_dev_icon_black.png"
+      } else {
+        mode = "dark";
+        document.querySelector("body").setAttribute("data-bs-theme", "dark")
+        document.getElementById("themesel").className = "bi bi-moon-fill float-end"
+        document.getElementById("ddimg").src = "./assets/daily_dev_icon.png"
+      }
     }
-  }
-    
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-  crossorigin="anonymous">
+  </script>
+
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": "#00ff00" },  // Green particles
+        "shape": {
+          "type": "circle",
+          "stroke": { "width": 0, "color": "#000000" }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": true
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00ff00",  // Green lines
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "repulse": { "distance": 100, "duration": 0.4 }
+        }
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous">
   </script>
 </body>
 </html>

@@ -102,8 +102,16 @@
         } else if (command.trim() === "aboutme") {
           appendOutput(`I'm a 12 year old and my name is Mithun. I stared coding since I was 11. My favourite coding languages are Python, HTML, CSS, JS, Java`)
         } else if (command.trim() === "build") {
-          appendOutput("BUILD 1.1.1")
-        } else if (command.trim() === "reload")
+          appendOutput("BUILD 1.1.2")
+        } else if (command.trim() === "mygame") {
+            appendOutput("I'm learning game development but I don't have any `public` games yet.")
+        } else if (command.trim() === "github") {
+            appendOutput("You'll be directed to the GitHub page for this website!")
+            window.location.href = "https://www.github.com/notmithun/notmithun.github.io"
+        } else if (command.trim() === "discord") {
+            appendOutput("I don't have a discord server")
+        }
+        else if (command.trim() === "reload")
         {
           appendOutput("🔃 Reloading")
           window.location.reload()
