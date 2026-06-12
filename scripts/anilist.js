@@ -78,7 +78,7 @@ async function loadAniList() {
     console.error(err);
 
     document.getElementById("anime_watching_now").textContent =
-      "Unable to load";
+      localStorage.getItem(CACHE_KEY) || "Unable to load";
   }
 }
 
