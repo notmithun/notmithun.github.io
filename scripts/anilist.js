@@ -16,7 +16,7 @@ async function loadAniList() {
   const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
 
   if (cachedData && cachedTime && now - Number(cachedTime) < SIX_HOURS) {
-    document.getElementById("currently-watching").textContent = cachedData;
+    document.getElementById("anime_watching_now").textContent = cachedData;
     return;
   }
 
