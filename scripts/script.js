@@ -1,4 +1,4 @@
-console.log("Build 2.0.5");
+console.log("Build 2.0.6");
 function calculateAge() {
   const birthDate = new Date(2012, 7, 18);
   const today = new Date();
