@@ -21,6 +21,7 @@
             href="assets/favicon-16x16.png"
         />
         <link rel="manifest" href="assets/site.webmanifest" />
+
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -31,40 +32,76 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
-        <link rel="stylesheet" href="css/cards.css" />
-        <script
-            src="https://kit.fontawesome.com/19617b418c.js"
-            crossorigin="anonymous"
-        ></script>
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+
         <title>Welcome!</title>
         <noscript style="color: red; text-align: center; font-size: 2rem"
             >PLS ENABLE JAVASCRIPT...</noscript
         >
-    </head>
-    <body data-bs-theme="dark">
-        <div
-            id="particles-js"
-            style="
+
+        <style>
+            body {
+                font-family: "Space Mono", monospace;
+            }
+            #particles-js {
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
                 z-index: -1;
-            "
-        ></div>
-        <div style="position: relative; z-index: 1">
-            <i
-                id="themesel"
-                class="bi bi-moon-fill float-end"
-                onclick="changeTheme()"
-            ></i>
+            }
+            .main-wrapper {
+                position: relative;
+                z-index: 1;
+            }
+            .social-icons {
+                cursor: pointer;
+            }
+            .social-icons i,
+            .social-icons img {
+                margin-right: 7.5px;
+            }
+            .social-icons i:last-child,
+            .social-icons img:last-child {
+                margin-right: 0;
+            }
+            #ddimg {
+                width: 25px;
+                height: 25px;
+            }
+            #profile-pic {
+                width: 125px;
+                height: 125px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid #0000;
+            }
+        </style>
+    </head>
+    <body data-bs-theme="dark">
+        <div id="particles-js"></div>
+
+        <div class="main-wrapper">
+            <i id="themesel" class="bi bi-moon-fill float-end"></i>
+
             <div
                 class="d-flex justify-content-center align-items-center vh-100"
             >
                 <div class="p-5 rounded shadow bg-body-tertiary">
-                    <h2 class="text-center">Mithun Kumar</h2>
+                    <h2 class="text-center">notmithun</h2>
+                    <div class="text-center mb-3">
+                        <img
+                            src="./assets/pfp.png"
+                            alt="Mithun Kumar"
+                            id="profile-pic"
+                        />
+                    </div>
                     <p>
                         I live in: somewhere in the Observable universe<br />
                         Gender: Male<br />
@@ -85,121 +122,123 @@
                             <i class="fa-brands fa-css3-alt"></i>
                         </li>
                         <li>Java <i class="fa-brands fa-java"></i></li>
-                        <li>C# (<em>I couldn't find an icon for C# 😔</em>)</li>
+                        <li>C# <em>(I couldn't find an icon for C# 😔)</em></li>
                     </ul>
                     <p>I love Windows <i class="fa-brands fa-windows"></i></p>
+
                     <div
-                        class="d-flex flex-row justify-content-center align-items-center"
-                        style="cursor: pointer"
+                        class="d-flex flex-row justify-content-center align-items-center social-icons"
                     >
-                        <i
-                            class="fa-brands fa-github"
-                            onclick="
-                                window.location.href =
-                                    'https://github.com/notmithun'
-                            "
-                            style="margin-right: 7.5px"
-                        ></i>
-                        <i
-                            onclick="
-                                window.location.href =
-                                    'https://app.daily.dev/notmithun'
-                            "
-                            ><img
+                        <i class="fa-brands fa-github" id="btn-github"></i>
+                        <i id="btn-dailydev">
+                            <img
                                 id="ddimg"
                                 src="./assets/daily_dev_icon.png"
-                                style="
-                                    width: 25px;
-                                    height: 25px;
-                                    margin-right: 7.5px;
-                                "
-                        /></i>
-                        <i
-                            class="fa-brands fa-reddit"
-                            onclick="
-                                window.location.href =
-                                    'https://www.reddit.com/user/MithunCode2012'
-                            "
-                            style="margin-right: 7.5px"
-                        ></i>
+                                alt="daily.dev"
+                            />
+                        </i>
+                        <i class="fa-brands fa-reddit" id="btn-reddit"></i>
                         <i
                             class="fa-brands fa-stack-overflow"
-                            onclick="
-                                window.location.href =
-                                    'https://stackoverflow.com/users/22992157/mithun'
-                            "
+                            id="btn-stackoverflow"
                         ></i>
                         <img
-                          src="./assets/anilist.svg"
-                          alt="AniList"
-                          width="25"
-                          height="25"
-                          style="margin-left: 7.5px;"
+                            src="./assets/anilist.svg"
+                            id="btn-anilist"
+                            alt="AniList"
+                            width="25"
+                            height="25"
                         />
                     </div>
                 </div>
             </div>
-            <button
-                onclick="window.location.href = 'terminal.html'"
-                class="btn btn-secondary"
-            >
+
+            <button id="btn-terminal" class="btn btn-secondary">
                 <i class="fa-solid fa-terminal"></i> Terminal
             </button>
         </div>
 
+        <!-- Font Awesome -->
+        <script
+            src="https://kit.fontawesome.com/19617b418c.js"
+            crossorigin="anonymous"
+            defer
+        ></script>
+        <!-- Particles -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="./anilist.js" defer></script>
+
         <script>
-            console.log("Build 1.1.3");
-            let mode = "dark";
+            console.log("Build 1.2.0");
+
+            // --- Theme ---
+            let mode = localStorage.getItem("theme") || "dark";
+            const body = document.body;
+            const themeSel = document.getElementById("themesel");
+            const ddimg = document.getElementById("ddimg");
+
+            function applyTheme() {
+                const isLight = mode === "light";
+                body.setAttribute("data-bs-theme", isLight ? "light" : "dark");
+                themeSel.className = isLight
+                    ? "bi bi-brightness-high-fill float-end"
+                    : "bi bi-moon-fill float-end";
+                ddimg.src = isLight
+                    ? "./assets/daily_dev_icon_black.png"
+                    : "./assets/daily_dev_icon.png";
+            }
 
             function changeTheme() {
-                if (mode == "dark") {
-                    mode = "light";
-                    document
-                        .querySelector("body")
-                        .setAttribute("data-bs-theme", "light");
-                    document.getElementById("themesel").className =
-                        "bi bi-brightness-high-fill float-end";
-                    document.getElementById("ddimg").src =
-                        "./assets/daily_dev_icon_black.png";
-                } else {
-                    mode = "dark";
-                    document
-                        .querySelector("body")
-                        .setAttribute("data-bs-theme", "dark");
-                    document.getElementById("themesel").className =
-                        "bi bi-moon-fill float-end";
-                    document.getElementById("ddimg").src =
-                        "./assets/daily_dev_icon.png";
-                }
+                mode = mode === "dark" ? "light" : "dark";
+                localStorage.setItem("theme", mode);
+                applyTheme();
             }
-        </script>
 
-        <script src="./anilist.js"></script>
+            applyTheme();
+            themeSel.addEventListener("click", changeTheme);
 
-        <script>
+            // --- Social links ---
+            const links = {
+                "btn-github": "https://github.com/notmithun",
+                "btn-dailydev": "https://app.daily.dev/notmithun",
+                "btn-reddit": "https://www.reddit.com/user/MithunCode2012",
+                "btn-stackoverflow":
+                    "https://stackoverflow.com/users/22992157/mithun",
+                "btn-anilist": "https://anilist.co/user/notmithun",
+                "btn-terminal": "./terminal.html",
+            };
+
+            for (const [id, url] of Object.entries(links)) {
+                document.getElementById(id)?.addEventListener("click", () => {
+                    window.location.href = url;
+                });
+            }
+
+            // --- Particles ---
             particlesJS("particles-js", {
                 particles: {
                     number: {
                         value: 80,
                         density: { enable: true, value_area: 800 },
                     },
-                    color: { value: "#00ff00" }, // Green particles
+                    color: { value: "#00ff00" },
                     shape: {
                         type: "circle",
                         stroke: { width: 0, color: "#000000" },
                     },
-                    opacity: {
-                        value: 0.5,
-                        random: true,
-                    },
-                    size: {
-                        value: 3,
-                        random: true,
-                    },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
                     line_linked: {
                         enable: true,
                         distance: 150,
-                        color: "#00ff00", // Green lines
+                        color: "#00ff00",
                         opacity: 0.4,
                         width: 1,
                     },
@@ -219,17 +258,9 @@
                         onhover: { enable: true, mode: "repulse" },
                         onclick: { enable: true, mode: "push" },
                     },
-                    modes: {
-                        repulse: { distance: 100, duration: 0.4 },
-                    },
+                    modes: { repulse: { distance: 100, duration: 0.4 } },
                 },
             });
         </script>
-
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"
-        ></script>
     </body>
 </html>
