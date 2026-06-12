@@ -1,4 +1,4 @@
-console.log("Build 2.0.2");
+console.log("Build 2.0.3");
 function calculateAge() {
   const birthDate = new Date(2012, 7, 18);
   const today = new Date();
@@ -25,9 +25,6 @@ function applyTheme() {
   const isLight = mode === "light";
   body.className = isLight ? "light" : "dark";
   themeSel.innerHTML = isLight ? SVG_SUN : SVG_MOON;
-  ddimg.src = isLight
-    ? "./assets/icons/daily_dev_icon_black.png"
-    : "./assets/icons/daily_dev_icon.png";
 }
 
 function changeTheme() {
