@@ -16,10 +16,10 @@ It uses plain HTML, CSS, JavaScript so you don't need anything to run this like 
 
 # Demo
 ### Dark mode
-<img width="1919" height="948" alt="image" src="https://github.com/notmithun/notmithun.github.io/screenshot_for_readme/ss_dark.png" />
+<img width="1919" height="948" alt="image" src="https://github.com/notmithun/notmithun.github.io/blob/main/screenshot_for_readme/ss_dark.png" />
 
 ### Light mode
-<img width="1919" height="943" alt="image" src="https://github.com/notmithun/notmithun.github.io/screenshot_for_readme/ss_light.png" />
+<img width="1919" height="943" alt="image" src="https://github.com/notmithun/notmithun.github.io/blob/main/screenshot_for_readme/ss_light.png" />
 
 
 *Images may vary from the actual website due to updates*
