@@ -16,14 +16,16 @@ It uses plain HTML, CSS, JavaScript so you don't need anything to run this like 
 
 # Demo
 ### Dark mode
-<img width="1919" height="948" alt="image" src="https://github.com/user-attachments/assets/9bd6806e-2a89-4537-ae6a-80fa4754b76c" />
+<img width="1919" height="948" alt="image" src="https://github.com/notmithun/notmithun.github.io/screenshot_for_readme/ss_dark.png" />
 
 ### Light mode
-<img width="1919" height="943" alt="image" src="https://github.com/user-attachments/assets/a08511ff-c8e8-4ac5-8bde-1d82b6a2dce5" />
+<img width="1919" height="943" alt="image" src="https://github.com/notmithun/notmithun.github.io/screenshot_for_readme/ss_light.png" />
 
 
 *Images may vary from the actual website due to updates*
 
 🌐 Live site: https://notmithun.github.io/
+
+Used [readme.so](https://readme.so/) to generate this README.
 
 *yes btw i dont live in Earth, i live somewhere in the Observable universe*
